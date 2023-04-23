@@ -40,7 +40,7 @@ const  HomePage =()=>{
            <br/>
            <span className={styles.text}>
           can make transection between them using superfluid 
-
+          very easily...
            </span>
            
            </p>
