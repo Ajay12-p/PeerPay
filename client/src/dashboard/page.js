@@ -14,7 +14,10 @@ const [flag,setFlag] = useState(false)
   console.log(Account_No)
     return (
         <>
+        //linear-gradient(315deg, #63d471 0%, #233329 74%)
+        //linear-gradient(to right, rgb(199, 210, 254), rgb(254, 202, 202), rgb(254, 249, 195))
          <Box  background=" linear-gradient(to right, rgb(199, 210, 254), rgb(254, 202, 202), rgb(254, 249, 195))"
+      
         
         //  circle at 24.1% 68.8%, rgb(50, 50, 50) 0%, rgb(0, 0, 0) 99.4%
          height="50vh">
