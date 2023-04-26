@@ -2,8 +2,9 @@
 import Navbar from "../Navbar/page";
 import styles from "./page.module.css"
 import { Card } from "@chakra-ui/react";
+import { useNavigate } from "react-router-dom";
 const  HomePage =()=>{
-
+    const navigate = useNavigate();
     return (
         <>
          <div className ={styles.body}>
@@ -12,9 +13,19 @@ const  HomePage =()=>{
             <div  className={styles.fixedbg}>
               
            <Navbar/>
-            </div>
+              
+               
+           <div  onClick={()=>{
+            navigate("/Create-account");
+        }} className={styles.text1} style={{placeItems:"center",justifyContent:"center" ,marginLeft:"85vh",marginTop:"17vh"}}>
+get Started...
 
-            <div className={styles.body1}>
+</div>
+
+
+            </div>
+           
+            <div  className={styles.body1}>
         <div className={styles.a}>
            limitless
         </div>
