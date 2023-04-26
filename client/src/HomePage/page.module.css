@@ -22,8 +22,8 @@
     display: flex;
     align-items: center;
     margin-left: 50px;
- border: 3px solid white;
-   border-radius: 250px;
+
+
     height: 50vh;
     font-family: sans-serif;
 
@@ -70,3 +70,19 @@ color:white;
 background-color: #ccc;
 }
 
+
+.text1{
+
+    text-decoration: white;
+
+  color: white;
+  margin-right: 5px;
+  font-size: 48px;
+  font-weight: 600;
+
+width: fit-content;
+   cursor: pointer;
+
+
+
+  }
