@@ -4,6 +4,17 @@ import styles from "./page.module.scss";
  import { Box, Card } from "@chakra-ui/react";
 import { useRef } from "react";
 import Nav from "../Nav/page";
+import {
+    Table,
+    Thead,
+    Tbody,
+    Tfoot,
+    Tr,
+    Th,
+    Td,
+    TableCaption,
+    TableContainer,
+  } from '@chakra-ui/react'
 const Dashbord = () => {
 
 
@@ -11,11 +22,13 @@ const [flag,setFlag] = useState(false)
   const bussinuss_Name = useRef("");
   const Account_No = useRef("");
   console.log(bussinuss_Name);
-  console.log(Account_No)
+  console.log(Account_No);
+
+  const [apiKey, setApiKey] = useState("woi rir9j uq39un90qn9292i-i-03riuiq3rpijr 3ii fedsekwediq3rur");
+  const [compName , setCompName] = useState("bhart pvt. Ltd.");
     return (
         <>
-        //linear-gradient(315deg, #63d471 0%, #233329 74%)
-        //linear-gradient(to right, rgb(199, 210, 254), rgb(254, 202, 202), rgb(254, 249, 195))
+
          <Box  background=" linear-gradient(to right, rgb(199, 210, 254), rgb(254, 202, 202), rgb(254, 249, 195))"
       
         
@@ -31,9 +44,9 @@ const [flag,setFlag] = useState(false)
 
 
                         <div className={styles.companeyName}>
-                            companey Name
+                            companey Name - {compName}
                         </div>
-                        <div 
+                        {/* <div 
                           onClick={()=>{
                              
                               setFlag(true)
@@ -42,19 +55,20 @@ const [flag,setFlag] = useState(false)
                         className={styles.join}>
                             create account
 
+                        </div> */}
+                    </div>
+                    <div className={styles.data}>
+                        <div className ={styles.tex}>
+                        your api key is :  {apiKey}
                         </div>
+                      
                     </div>
-                    <div className={styles.data}>
-                        part1
-                    </div>
-                    <div className={styles.data}>
-                        part2
-                    </div>
+                    
 
 
 
                 </div>
-      {
+      {/* {
         flag?
      
          ( <div  className={styles.modalContainer}>
@@ -83,7 +97,7 @@ const [flag,setFlag] = useState(false)
            </div>
           
           </div>
-      ): <></>}
+      ): <></>} */}
 
  
 
@@ -115,19 +129,60 @@ const [flag,setFlag] = useState(false)
       borderRadius="26px"
                 
                 >
-
+{/* 
                
                 <div className={styles.card}>
                     <div className={styles.body}>
                         <div className={styles.bodytext}>
-                            companey Name
+                         Accounts
                         </div>
                         <div className={styles.bodytext}>
-                            Active
+                            flow-rate
+                        </div>
+                        <div className={styles.bodytext}>
+                            Active/Deactive
                         </div>
                     </div>
 
-                </div>
+                </div> */}
+                <TableContainer>
+  <Table variant='striped' colorScheme='teal'  width="100vh">
+    <TableCaption>Imperial to metric conversion factors</TableCaption>
+    <Thead>
+      <Tr>
+        <Th>Accounts</Th>
+        <Th>Flow-rate</Th>
+        <Th isNumeric>Active/deactive</Th>
+      </Tr>
+    </Thead>
+    <Tbody>
+      <Tr>
+        <Td>inches</Td>
+        <Td>millimetres (mm)</Td>
+        <Td isNumeric>25.4</Td>
+      </Tr>
+      <Tr>
+        <Td>feet</Td>
+        <Td>centimetres (cm)</Td>
+        <Td isNumeric>30.48</Td>
+      </Tr>
+      <Tr>
+        <Td>yards</Td>
+        <Td>metres (m)</Td>
+        <Td isNumeric>0.91444</Td>
+      </Tr>
+    </Tbody>
+    <Tfoot>
+      <Tr>
+        <Th>To convert</Th>
+        <Th>into</Th>
+        <Th isNumeric>multiply by</Th>
+      </Tr>
+    </Tfoot>
+  </Table>
+</TableContainer>
+
+              {/* create a table here  */}
                 </Card>
             </div>
             
