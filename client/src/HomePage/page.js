@@ -17,8 +17,8 @@ const  HomePage =()=>{
                
            <div  onClick={()=>{
             navigate("/Create-account");
-        }} className={styles.text1} style={{placeItems:"center",justifyContent:"center" ,marginLeft:"85vh",marginTop:"17vh"}}>
-get Started...
+        }} className={styles.text1} style={{placeItems:"center",justifyContent:"center" ,marginLeft:"55vh",marginTop:"17vh"}}>
+create your bussinuss account ...
 
 </div>
 
@@ -32,7 +32,7 @@ get Started...
 
          <p  style={{marginLeft : "20vh"}}>
   
-            about  --us 
+            about  --  us 
              <span className={styles.text}>
 
            
