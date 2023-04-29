@@ -33,6 +33,18 @@ const Navbar = () => {
                 }} >
                     Dashbord
                 </h3>
+               
+                <h3  className={styles.text} onClick={()=>{
+                    a();
+                }} >
+                   Docs
+                </h3>
+                <h3  className={styles.text} onClick={()=>{
+                    a();
+                }} >
+                 Support
+                </h3>
+              
 
                 <h3  className={styles.text}>
                     Homepage
@@ -43,7 +55,7 @@ const Navbar = () => {
            
          
             <div className={styles.button}>
-           GET STARTED...
+        CONNECT YOUR WALLET...
                
             </div>
             
