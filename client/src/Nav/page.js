@@ -17,7 +17,7 @@ function Nav() {
         <Button variant="ghost" color="white"  _hover="none" mr={4} onClick={()=>{
             a();
         }}>Home</Button>
-        <Button variant="ghost" color="white"  _hover="none" mr={4}>About</Button>
+        <Button variant="ghost" color="white"  _hover="none" mr={4}>Docs</Button>
         <Button variant="ghost" color="white"  _hover="none"  mr={4}>Services</Button>
         <Button variant="ghost"  color="white"  _hover="none">Contact</Button>
       </Box>
