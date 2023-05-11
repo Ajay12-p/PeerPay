@@ -1,0 +1,20 @@
+.App {
+  border: 2px solid red;
+  width: 360px;
+  height: 596px;
+}
+
+.header {
+  background-color: #000;
+  padding: 20px;
+  color: aqua;
+  text-align: center;
+  justify-content: center;
+  display: flex;
+  gap: 103px;
+}
+
+.main {
+  padding: 0px;
+  text-align: center;
+}

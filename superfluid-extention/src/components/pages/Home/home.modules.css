@@ -1,0 +1,22 @@
+.flowRate {
+  padding: 30px;
+  color: aqua;
+}
+
+.userData {
+  padding: 20px;
+  color: aqua;
+}
+
+.tabs {
+  border: 1px red solid;
+  padding: 20px;
+  display: flex;
+  gap: 34px;
+}
+
+.Content {
+  height: 224px;
+  overflow: auto;
+  background: #fff;
+}
