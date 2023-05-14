@@ -16,17 +16,17 @@
   justify-content: center;
   align-items: center;
   width: 100%;
-  height: 60px;
+  height: 100%;
   background-color: #f5f5f5;
 }
 
 .scroll {
-  height: 160px;
+  height: 60%;
 
   width: 340px;
 }
 
 .content {
-  height: 240px;
+  height: 247px;
   overflow-y: auto;
 }
