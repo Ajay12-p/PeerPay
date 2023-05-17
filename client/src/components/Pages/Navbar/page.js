@@ -4,9 +4,7 @@ import Spline from "@splinetool/react-spline";
 import { useNavigate } from "react-router-dom";
 const Navbar = () => {
   const navigate = useNavigate();
-  const a = () => {
-    navigate("./dashbord");
-  };
+  const a = () => {};
   return (
     <>
       <div className={styles.main}>
@@ -20,11 +18,18 @@ const Navbar = () => {
 
         <div>
           <div style={{ display: "flex" }}>
-            <h3 className={styles.text}>Homepage</h3>
             <h3
               className={styles.text}
               onClick={() => {
-                a();
+                navigate("/");
+              }}
+            >
+              Homepage
+            </h3>
+            <h3
+              className={styles.text}
+              onClick={() => {
+                navigate("/dashbord");
               }}
             >
               Dashbord
@@ -33,7 +38,7 @@ const Navbar = () => {
             <h3
               className={styles.text}
               onClick={() => {
-                a();
+                navigate("/dashbord");
               }}
             >
               Docs
@@ -41,7 +46,7 @@ const Navbar = () => {
             <h3
               className={styles.text}
               onClick={() => {
-                a();
+                navigate("/dashbord");
               }}
             >
               Support

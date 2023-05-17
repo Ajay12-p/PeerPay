@@ -3,18 +3,21 @@
   width: 100%;
 
   background-attachment: scroll;
-  background-image: linear-gradient(
-    to right,
-    rgb(199, 210, 254),
-    rgb(254, 202, 202),
-    rgb(254, 249, 195)
-  );
+  background-image: transparent;
   min-height: 500px;
   height: 100%;
   background-attachment: fixed;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
+}
+.Mainbody {
+  background-image: linear-gradient(
+    to right,
+    rgb(199, 210, 254),
+    rgb(254, 202, 202),
+    rgb(254, 249, 195)
+  );
 }
 .navhome {
   position: fixed;
@@ -74,13 +77,13 @@
 }
 
 .text1 {
-  text-decoration: white;
+  text-transform: uppercase;
   display: flex;
   justify-content: center;
   text-align: center;
   color: white;
   font-size: 48px;
   font-weight: 600;
-  padding-top: 10%;
+  padding-top: 25%;
   cursor: pointer;
 }

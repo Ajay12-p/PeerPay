@@ -3,15 +3,19 @@ import styles from "./page.module.css";
 import { Box, Card } from "@chakra-ui/react";
 import { useNavigate } from "react-router-dom";
 import Nav from "../Nav/page";
+import Spacebutton from "../../../UI/Buttons/spacebutton/Spacebutton";
 
 const HomePage = () => {
   const navigate = useNavigate();
+
+  const PrintName = () => {
+    navigate("/Create-account");
+  };
   return (
-    <>
-      {/* <div className={styles.navhome}>
+    <div className="Mainbody">
+      <div className={styles.navhome}>
         <Navbar />
-      </div> */}
-      <Nav />
+      </div>
 
       <div className={styles.body}>
         <div className={styles.fixedbg}>
@@ -24,18 +28,28 @@ const HomePage = () => {
             create your bussinuss account ...
           </div>
         </div>
+        <div
+          style={{
+            display: "flex",
+            justifyContent: "center",
+            paddingBottom: "10vh",
+            paddingTop: "10vh",
+            background: "transparent",
+          }}
+        >
+          <Spacebutton name="LET'S GO...." Function={PrintName} />
+        </div>
 
         <div className={styles.body1}>
           <div className={styles.a}>limitless</div>
 
           <p style={{ marginLeft: "20vh" }}>
-            about -- us
-            <span className={styles.text}>
-              What is does ... it is a decetnrlized platform
-            </span>
+            {/* <div className="small-headline">about -- us</div> */}
+            <span className="small-headline">What is does ...</span>
             <br />
             <span className={styles.text}>
-              which helps comopany to create a safe account so that thay
+              it is a decetnrlized platform which helps comopany to create a
+              safe account so that thay
             </span>
             <br />
             <span className={styles.text}>
@@ -44,7 +58,7 @@ const HomePage = () => {
           </p>
         </div>
       </div>
-    </>
+    </div>
   );
 };
 

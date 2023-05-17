@@ -7,7 +7,12 @@
   height: 100px;
   background: transparent;
   // background: linear-gradient(90deg, #00C9FF 0%, #92FE9D 100%);
-
+  background-image: linear-gradient(
+    to right,
+    rgb(199, 210, 254),
+    rgb(254, 202, 202),
+    rgb(254, 249, 195)
+  );
   overflow: hidden;
   top: 0;
   width: 100%;
