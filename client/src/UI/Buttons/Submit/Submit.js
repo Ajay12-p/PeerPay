@@ -11,13 +11,11 @@ const Submit = ({ Name, Nextname, Function }) => {
         <div>
           <span>
             <p>{Name}</p>
-            <p>😶‍🌫️</p>
           </span>
         </div>
         <div>
           <span>
             <p>{Nextname}</p>
-            <p>😁</p>
           </span>
         </div>
       </button>
