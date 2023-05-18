@@ -11,21 +11,14 @@
   background-repeat: no-repeat;
   background-size: cover;
 }
-.Mainbody {
-  background-image: linear-gradient(
-    to right,
-    rgb(199, 210, 254),
-    rgb(254, 202, 202),
-    rgb(254, 249, 195)
-  );
-}
+
 .navhome {
   position: fixed;
   display: flex;
   width: 100%;
+  z-index: 2;
   justify-content: center;
   background-color: black;
-  z-index: 1;
 }
 .fixedbg {
 }
@@ -73,7 +66,7 @@
 
   place-items: center;
 
-  color: white;
+  color: grey;
 }
 
 .text1 {

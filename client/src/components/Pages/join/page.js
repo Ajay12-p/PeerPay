@@ -1,6 +1,7 @@
 import { Button, Center, Flex } from "@chakra-ui/react";
 import { useNavigate } from "react-router-dom";
 import Navbar from "../Navbar/page";
+import Submit from "../../../UI/Buttons/Submit/Submit";
 import {
   FormControl,
   FormLabel,
@@ -11,6 +12,11 @@ import {
 } from "@chakra-ui/react";
 const Join = () => {
   const navigate = useNavigate();
+
+  const HandelSubmit = () => {
+    console.log("heleof");
+    navigate("/Thankyou");
+  };
 
   return (
     <div className="Mainbody">
@@ -34,16 +40,16 @@ const Join = () => {
                   <Input width={80} height={20} placeholder="Enter the Name" />
                 </FormControl>
               </Box>
-              <Box>
-                <Button
-                  borderRadius={12}
-                  mt={4}
-                  onClick={() => {
-                    navigate("dashbord");
-                  }}
-                >
-                  submit
-                </Button>
+              <Box
+                style={{
+                  marginTop: "5vh",
+                }}
+              >
+                <Submit
+                  Name="Submit"
+                  Nextname="ThankYOU"
+                  Function={HandelSubmit}
+                />
               </Box>
             </Box>
           </Card>
