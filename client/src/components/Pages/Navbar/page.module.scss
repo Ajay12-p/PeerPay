@@ -40,10 +40,10 @@
 
 .button {
   --border-radius: 30px;
-  --border-width: 4px;
+  --border-width: 3px;
   appearance: none;
   position: relative;
-  padding: 1.4em;
+  padding: 1.3em;
   height: 60px;
   text-align: center;
 
@@ -52,10 +52,10 @@
   border: 0;
   background-color: transparent;
   font-family: "Roboto", Arial, "Segoe UI", sans-serif;
-  font-size: 14px;
-  font-weight: 400;
-  color: #ccc;
-  font-weight: bold;
+  font-size: 15px;
+  font-weight: 100;
+  color: #BBC4C2;
+
   z-index: 2;
   margin-left: 10px;
 }
