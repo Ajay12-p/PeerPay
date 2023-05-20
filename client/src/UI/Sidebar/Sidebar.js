@@ -1,11 +1,12 @@
 import React from "react";
 import "./Sidebar.css";
+import Dashbord from "../../components/Pages/dashboard/page";
 const Sidebar = () => {
   return (
     <div>
       <nav>
         <a href="#first">
-          first
+          Dashbaord
           <i className="far fa-user" />
         </a>
         <a href="#second">
@@ -22,9 +23,10 @@ const Sidebar = () => {
         </a>
       </nav>
       <div className="container">
-        <section id="first">
-          <h1>First</h1>
-        </section>
+        <div id="first">
+          <Dashbord />
+        </div>
+        <section>first</section>
         <section id="second">
           <h1>Second</h1>
         </section>
