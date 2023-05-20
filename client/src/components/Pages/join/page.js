@@ -5,7 +5,8 @@ import Submit from "../../../UI/Buttons/Submit/Submit";
 import { useDisclosure } from "@chakra-ui/react";
 import Spacebutton from "../../../UI/Buttons/spacebutton/Spacebutton";
 import { useState, useEffect } from "react";
-import ReactConfetti from "react-confetti";
+import ConfettiExplosion from "react-confetti-explosion";
+
 import {
   Modal,
   ModalOverlay,
@@ -54,23 +55,7 @@ const Join = () => {
   return (
     <div className="Mainbody">
       <Navbar />
-      {flags && (
-        <ReactConfetti
-          drawShape={(ctx) => {
-            ctx.beginPath();
-            for (let i = 0; i < 22; i++) {
-              const angle = 0.35 * i;
-              const x = (0.2 + 1.5 * angle) * Math.cos(angle);
-              const y = (0.2 + 1.5 * angle) * Math.sin(angle);
-              ctx.lineTo(x, y);
-            }
-            ctx.stroke();
-            ctx.closePath();
-          }}
-          width={windowDimensions.width}
-          height={windowDimensions.height}
-        />
-      )}
+
       <Center pt="25vh" pb="25vh">
         {/* <Flex> */}
         <Card
@@ -118,8 +103,18 @@ const Join = () => {
                   width: "100%",
                 }}
               >
-                Congrats🎊🎊🥳
+                Congrats{" "}
+                {flags && (
+                  <ConfettiExplosion
+                    force={0.8}
+                    duration={8000}
+                    particleCount={300}
+                    width={1600}
+                  />
+                )}
+                🎊🎊🥳
               </h1>
+
               <div
                 style={{
                   display: "flex",

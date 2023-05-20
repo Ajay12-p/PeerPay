@@ -4,6 +4,7 @@ import { Box, Card } from "@chakra-ui/react";
 import Navbar from "../Navbar/page";
 import { useRef } from "react";
 import Nav from "../Nav/page";
+import Sidebar from "../../../UI/Sidebar/Sidebar";
 import {
   Table,
   Thead,
@@ -35,6 +36,9 @@ const Dashbord = () => {
       >
         <div className={styles.navhome}>
           <Navbar />
+        </div>
+        <div>
+          <Sidebar />
         </div>
         {/* <Nav/> */}
         <div className={styles.main}>
