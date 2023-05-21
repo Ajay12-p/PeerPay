@@ -19,7 +19,7 @@ const Join = () => {
   const navigate = useNavigate();
 
   const HandelCong = () => {
-    navigate("/dashboard");
+    navigate("/dashbord");
   };
   const HandelSubmit = async () => {
     console.log(data.AccountAdress.length);
@@ -64,7 +64,11 @@ const Join = () => {
               flexDirection: "row-reverse",
             }}
           >
-            <img className="imageofform" src={LoginImg} alt="" />
+            <img
+              className="imageofform"
+              src="https://res.cloudinary.com/dxfejxnvp/image/upload/v1684656451/pngegg_8_w4hagp.png"
+              alt=""
+            />
 
             <div className="Formbody">
               <form className="form">
