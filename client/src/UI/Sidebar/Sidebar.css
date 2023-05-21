@@ -2,39 +2,47 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  border-radius: 20px;
+  margin-left: 4px ;
+
+
 }
 
 :root {
   --primary-color: #d96aa7;
-  --secondary-color: #422c73;
+  --secondary-color: white;
   --complimentary-color: #88bfb5;
   --contrast-color: #f2e527;
   --light-color: #d2a9d9;
+
 }
 
 .container {
-  background: #191919;
+  background: white;
   min-height: 100vh;
   font-family: Montserrat, sans-serif;
+  margin-top: 30px ;
 }
 
 nav a {
-  font-size: 40px;
-  color: #fff;
+  font-size: 30px;
+  color: black;
   text-decoration: none;
   padding: 20px;
   text-align: center;
 }
 
 nav {
-  position: fixed;
+  position: fixed ;
   left: 0;
-  z-index: 50;
+  z-index: 2; 
   display: flex;
   justify-content: space-around;
   flex-direction: column;
   height: 100vh;
   background: var(--secondary-color);
+
+
 }
 
 section {
@@ -47,6 +55,7 @@ section {
   display: flex;
   justify-content: center;
   align-items: center;
+  margin-top: 9%;
 }
 
 section h1 {
@@ -63,7 +72,7 @@ section:target {
   left: 0;
   width: 100%;
   height: 100%;
-  z-index: 10;
+  z-index: 1;
 }
 
 section:target h1 {
