@@ -1,141 +1,110 @@
-import { Button, Center, Flex } from "@chakra-ui/react";
 import { useNavigate } from "react-router-dom";
 import Navbar from "../Navbar/page";
+import "./Forms.css";
+import LoginImg from "../../Media/bussigness.png";
 import Submit from "../../../UI/Buttons/Submit/Submit";
-import { useDisclosure } from "@chakra-ui/react";
-import Spacebutton from "../../../UI/Buttons/spacebutton/Spacebutton";
-import { useState, useEffect } from "react";
+import Congrats from "../../../UI/Card/CongratulationCard/Congrats";
+import { useState } from "react";
 import ConfettiExplosion from "react-confetti-explosion";
-
-import {
-  Modal,
-  ModalOverlay,
-  ModalContent,
-  ModalHeader,
-  ModalFooter,
-  ModalBody,
-  ModalCloseButton,
-} from "@chakra-ui/react";
-import {
-  FormControl,
-  FormLabel,
-  Input,
-  Box,
-  Card,
-  AbsoluteCenter,
-} from "@chakra-ui/react";
+import axios from "axios";
+import Form from "../../../UI/Card/forms/Form";
 const Join = () => {
   const [flagofcong, setFlagofcong] = useState(true);
-  const [windowDimensions, setWindowDimensions] = useState({
-    width: window.innerWidth,
-    height: window.innerHeight,
+  const [data, setData] = useState({
+    AccountAdress: "",
+    BussinessName: "",
   });
-  useEffect(() => {
-    window.addEventListener("resize", detectResize);
-    return () => {
-      window.removeEventListener("resize", detectResize);
-    };
-  }, []);
-  const detectResize = () => {
-    setWindowDimensions({
-      width: window.innerWidth,
-      height: window.innerHeight,
-    });
-  };
+
   const [flags, setFlags] = useState(false);
   const navigate = useNavigate();
-  const HandelSubmit = () => {
-    setFlagofcong(false);
-    console.log("heleof");
-    setFlags(true);
-    // setTimeout(() => {
-    //   navigate("/ThankYOU");
-    // }, 8000);
+
+  const HandelCong = () => {
+    navigate("/dashbord");
+  };
+  const HandelSubmit = async () => {
+    console.log(data.AccountAdress.length);
+    if (data.AccountAdress.length != 42) {
+      alert("Please Enter a valid Account Address");
+      return;
+    }
+    if (data.BussinessName.length < 3) {
+      alert("Please Enter a valid Bussiness Name");
+      return;
+    }
+
+    const response = await axios.post(
+      "http://localhost:5000/api/Bussiness/register",
+      data
+    );
+
+    console.log(response);
+    if (response.status == 200) {
+      setFlagofcong(false);
+      console.log("heleof");
+      setFlags(true);
+    } else {
+      alert("Please Enter a valid Account Address");
+    }
   };
   return (
     <div className="Mainbody">
       <Navbar />
+      <div
+        style={{
+          display: "flex",
+          justifyContent: "center",
+        }}
+      >
+        {flagofcong ? (
+          <div
+            style={{
+              maxWidth: "1500px",
+              display: "flex",
+              justifyContent: "center",
+              flexDirection: "row-reverse",
+            }}
+          >
+            <img
+              className="imageofform"
+              src="https://res.cloudinary.com/dxfejxnvp/image/upload/v1684656451/pngegg_8_w4hagp.png"
+              alt=""
+            />
 
-      <Center pt="25vh" pb="25vh">
-        {/* <Flex> */}
-        <Card
-          background=" linear-gradient(to right, rgb(199, 210, 254), rgb(254, 202, 202), rgb(254, 249, 195))"
-          position="Cetner"
-          width={"30%"}
-          height={"400px"}
-        >
-          {flagofcong ? (
-            <Box position="relative" padding={20}>
-              <Box>
-                <FormControl isRequired>
-                  <FormLabel>Enter the Address...</FormLabel>
-                  <Input width={80} height={20} placeholder="0x...." />
-                </FormControl>
-              </Box>
-              <Box>
-                <FormControl isRequired>
-                  <FormLabel>companey Name</FormLabel>
-                  <Input width={80} height={20} placeholder="Enter the Name" />
-                </FormControl>
-              </Box>
-
-              <Box
-                style={{
-                  marginTop: "5vh",
-                }}
-              >
-                <Submit
-                  Name="Submit 😀"
-                  Nextname="Lets Go 🚀"
-                  Function={HandelSubmit}
-                />
-              </Box>
-            </Box>
-          ) : (
-            <Box position="relative" paddingTop={"29%"}>
-              <h1
-                style={{
-                  display: "flex",
-                  justifyContent: "center",
-
-                  fontSize: "40px",
-                  fontWeight: "bold",
-                  width: "100%",
-                }}
-              >
-                Congrats{" "}
-                {flags && (
-                  <ConfettiExplosion
-                    force={0.8}
-                    duration={8000}
-                    particleCount={300}
-                    width={1600}
+            <div className="Formbody">
+              <form className="form">
+                <div className="form_front">
+                  <div className="form_details">Create API</div>
+                  <input
+                    type="text"
+                    onChange={(e) => {
+                      setData({ ...data, AccountAdress: e.target.value });
+                    }}
+                    className="input"
+                    placeholder="Account Address"
                   />
-                )}
-                🎊🎊🥳
-              </h1>
-
-              <div
-                style={{
-                  display: "flex",
-                  justifyContent: "center",
-                  marginTop: "5vh",
-                }}
-              >
-                <button
-                  className="SimpbleBtn"
-                  onClick={() => {
-                    navigate("/dashbord");
-                  }}
-                >
-                  Dashboard
-                </button>
-              </div>
-            </Box>
-          )}
-        </Card>
-        {/* </Flex> */}
-      </Center>
+                  <input
+                    type="text"
+                    className="input"
+                    onChange={(e) => {
+                      setData({ ...data, BussinessName: e.target.value });
+                    }}
+                    placeholder="Bussiness Name"
+                  />
+                  <Submit
+                    Name="Submit 😀"
+                    Nextname="Lets Go 🚀"
+                    Function={HandelSubmit}
+                  />
+                </div>
+              </form>
+            </div>
+          </div>
+        ) : (
+          <div className="Congrats">
+            <Congrats name="Dashboard" Func={HandelCong} />
+          </div>
+        )}
+      </div>
     </div>
   );
 };

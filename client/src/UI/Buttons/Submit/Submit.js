@@ -4,7 +4,8 @@ const Submit = ({ Name, Nextname, Function }) => {
     <div>
       <button
         className="btnS"
-        onClick={() => {
+        onClick={(e) => {
+          e.preventDefault();
           Function();
         }}
       >
