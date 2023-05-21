@@ -5,12 +5,12 @@ const BussinessSchema = mongoose.Schema(
     AccountAdress: {
       type: String,
       required: true,
-      unique: true,
+      // unique: true,
     },
     BussinessName: {
       type: String,
       required: true,
-      unique: true,
+      // unique: true,
     },
   },
   { timestamps: true }

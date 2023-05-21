@@ -1,5 +1,5 @@
 import Navbar from "../Navbar/page";
-import styles from "./page.module.css";
+import "./Home.css";
 import { Box, Card } from "@chakra-ui/react";
 import { useNavigate } from "react-router-dom";
 import Nav from "../Nav/page";
@@ -14,7 +14,7 @@ const HomePage = () => {
   return (
     <>
       {" "}
-      <div className={styles.navhome}>
+      <div className="navhome">
         <Navbar />
       </div>
       <div
@@ -24,12 +24,12 @@ const HomePage = () => {
         }}
         className="Mainbody"
       >
-        <div className={styles.body}>
+        <div className="body">
           <div
             onClick={() => {
               navigate("/Create-account");
             }}
-            className={styles.text1}
+            className="text1"
           >
             create your bussinuss account ...
           </div>
@@ -47,19 +47,19 @@ const HomePage = () => {
             <Spacebutton name="LET'S GO...." Function={PrintName} />
           </div>
 
-          <div className={styles.body1}>
-            <div className={styles.a}>PeerPay</div>
+          <div className="body1">
+            <div className="a">PeerPay</div>
 
             <p style={{ marginLeft: "20vh" }}>
               {/* <div className="small-headline">about -- us</div> */}
               <span className="small-headline">What is does ...</span>
               <br />
-              <span className={styles.text}>
+              <span className="text">
                 it is a decetnrlized platform which helps comopany to create a
                 safe account so that thay
               </span>
               <br />
-              <span className={styles.text}>
+              <span className="text">
                 can make transection between them using superfluid very
                 easily...
               </span>

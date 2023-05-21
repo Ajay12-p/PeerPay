@@ -14,6 +14,7 @@ body {
 }
 
 .Mainbody {
+  height: 100%;
   background-image: linear-gradient(
     to right,
     rgb(199, 210, 254),
@@ -103,4 +104,11 @@ code {
   position: relative;
   width: 15px;
   transition-delay: 0.2s;
+}
+
+.Congrats {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  text-align: center;
 }
