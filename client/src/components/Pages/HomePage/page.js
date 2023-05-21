@@ -29,7 +29,7 @@ const HomePage = () => {
             onClick={() => {
               navigate("/Create-account");
             }}
-            className="text1"
+            className="text-home1"
           >
             create your bussinuss account ...
           </div>

@@ -1,0 +1,77 @@
+.outerFrame {
+  margin-top: 50px;
+  width: 1000px;
+  height: 655px;
+  display: flex;
+  border-radius: 20px;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid black;
+}
+
+.mainPayment {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.rightgrid {
+  grid-area: right;
+}
+.leftgrid {
+  grid-area: left;
+}
+.innerFrame {
+  display: grid;
+  grid-template-areas: "left left left right right right";
+  width: 100%;
+  height: 100%;
+  gap: 10px;
+  border: 1px solid red;
+  padding: 10px;
+}
+
+.PrductCard {
+  display: flex;
+  justify-content: top;
+  align-items: center;
+
+  flex-direction: column;
+
+  margin-bottom: 50px;
+  width: 100%;
+  height: 100%;
+  border: 1px solid black;
+  border-radius: 20px;
+}
+
+.imgofpay {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 200px;
+  gap: 20px;
+}
+.PrductCard h2 {
+  color: #000;
+  margin: 20px;
+}
+.PrductCard img {
+  width: inherit;
+  height: inherit;
+  object-fit: cover;
+  border-radius: 20px;
+}
+.PaymentCard {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  flex-direction: column;
+
+  margin-bottom: 50px;
+  width: 100%;
+  height: 100%;
+  border: 1px solid black;
+  border-radius: 20px;
+}

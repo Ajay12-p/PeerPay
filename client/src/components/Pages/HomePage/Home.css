@@ -68,14 +68,13 @@
   color: grey;
 }
 
-.text1 {
-  text-transform: uppercase;
+.text-home1 {
   display: flex;
   justify-content: center;
-  text-align: center;
+  font-size: 64px;
+  text-transform: uppercase;
+  font-family: cursive;
+  padding-top: 200px;
   color: white;
-  font-size: 48px;
-  font-weight: 600;
-  padding-top: 25%;
-  cursor: pointer;
+  padding-bottom: 30px;
 }
