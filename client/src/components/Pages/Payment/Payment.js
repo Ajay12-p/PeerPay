@@ -160,15 +160,11 @@ const Payment = () => {
                 style={{
                   display: "flex",
                   justifyContent: "center",
+                  marginTop: "20px",
                   width: "100%",
                   gap: "10px",
                 }}
               >
-                <Connect
-                  Name="Connect Wallet❓"
-                  Nextname={"One Step Close"}
-                  Function={walletConnector}
-                />
                 {isconnected ? (
                   <Connect
                     Name={`Pay ${total}$ ${Coin}`}
@@ -177,11 +173,9 @@ const Payment = () => {
                   />
                 ) : (
                   <Connect
-                    Name={`Please connect  😠 `}
-                    Nextname={`your wallet 😡`}
-                    Function={() => {
-                      console.log("nothing");
-                    }}
+                    Name="Connect Wallet❓"
+                    Nextname={"One Step Close"}
+                    Function={walletConnector}
                   />
                 )}
               </div>
