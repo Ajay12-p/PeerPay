@@ -2,8 +2,24 @@
 import styles from "./page.module.scss";
 import Spline from "@splinetool/react-spline";
 import { useNavigate } from "react-router-dom";
+import { userContext } from "../../context/accContext";
+import { useContext } from "react";
+import {ethers} from "ethers";
 const Navbar = () => {
+  const ctx  = useContext(userContext);
+ const accAddress = ctx.sharedData.data.accAddress;
+  
   const navigate = useNavigate();
+  const walletConnector =async()=>{
+    const accounts = await window.ethereum.request({
+      method: "eth_requestAccounts",
+    });
+
+    const provider = new ethers.providers.Web3Provider(window.ethereum);
+const signer = provider.getSigner();
+ctx.sharedData.addData(provider, signer,accounts[0]);
+
+  }
   const a = () => {};
   return (
     <>
@@ -54,7 +70,12 @@ const Navbar = () => {
           </div>
         </div>
 
-        <div className={styles.button}>CONNECT YOUR WALLET...</div>
+        <div className={styles.button} onClick={walletConnector}>{accAddress
+                  ? `${accAddress.substr(0, 5)}...${accAddress.substr(
+                      37,
+                      42
+                    )}`
+                  : "connect"}</div>
       </div>
     </>
   );
