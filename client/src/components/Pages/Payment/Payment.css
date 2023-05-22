@@ -1,6 +1,6 @@
 .outerFrame {
   margin: 50px;
-  padding: 80px;
+  padding: 10px;
   display: flex;
   border-radius: 20px;
   justify-content: center;
@@ -10,18 +10,22 @@
 }
 .mainPayment {
   display: flex;
+  height: 100vh;
   justify-content: center;
   align-items: center;
-  height: 100vh;
+  background-image: linear-gradient(
+    to right,
+    rgb(199, 210, 254),
+    rgb(254, 202, 202),
+    rgb(254, 249, 195)
+  );
   gap: 20px;
-  background-repeat: repeat;
 }
 .innerFrame {
   border-radius: 20px;
   background-color: white;
   border: 1px solid black;
   display: flex;
-  justify-content: center;
 }
 
 .flexItem {
@@ -44,8 +48,10 @@
 .item1 {
   min-width: 700px;
   min-height: 200px;
+  height: 100%;
   max-width: 1000px;
-  padding: 5px;
+  padding-bottom: 30px;
+
   border-right: #000 solid 1px;
 }
 
@@ -184,11 +190,13 @@
 /* item2 full part (Payment part  ) */
 
 .item2 {
-  margin-left: 20px;
+  padding-top: 30px;
+  padding-right: 20px;
+  padding-left: 20px;
   min-width: 400px;
   display: flex;
   justify-content: start;
-  align-items: start;
+  align-items: center;
 }
 
 .item2 h2 {
@@ -230,5 +238,25 @@
   justify-content: start;
   align-items: center;
   gap: 20px;
-  width: 50%;
+  width: 65%;
+}
+
+.selectofinput select {
+  padding: 5px;
+  border-radius: 5px;
+  width: 100%;
+  border: 1px solid black;
+  font-size: 20px;
+  font-weight: 500;
+  outline: none;
+}
+
+.inputCoin {
+  display: flex;
+  font-size: 20px;
+  font-weight: 600;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+  width: 100%;
 }
