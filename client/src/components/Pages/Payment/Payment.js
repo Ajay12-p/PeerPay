@@ -101,9 +101,13 @@ const Payment = () => {
                 Starting Date <input type="date" min={today} />
                 Ending Date <input type="date" min={nextmin} />
               </div>
-              <div className="inputPay">
-                {" "}
-                Notice you have to do atleast one month as a subscription
+              <div
+                style={{
+                  color: "red",
+                  padding: "10px",
+                }}
+              >
+                *Notice you have to do atleast one month of subscription
               </div>
             </div>
           </div>
