@@ -8,7 +8,7 @@ const Dashbord = () => {
     <div className="BodyofDashboard">
       <Sidebar />
       dashboard
-      <Requirement />
+      {/* <Requirement /> */}
     </div>
   );
 };
