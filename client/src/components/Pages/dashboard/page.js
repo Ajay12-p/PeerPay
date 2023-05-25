@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import styles from "./page.module.scss";
-import { Requirement } from "trychecker";
+
 // import Sidebar from "../Navbar/page";
 import Sidebar from "../../Sidebar/Sidebar";
 const Dashbord = () => {
@@ -8,7 +8,6 @@ const Dashbord = () => {
     <div className="BodyofDashboard">
       <Sidebar />
       dashboard
-      {/* <Requirement /> */}
     </div>
   );
 };

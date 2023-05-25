@@ -4,6 +4,7 @@ import { Box, Card } from "@chakra-ui/react";
 import { useNavigate } from "react-router-dom";
 import Nav from "../Nav/page";
 import Spacebutton from "../../../UI/Buttons/spacebutton/Spacebutton";
+import Happy from "peerpaysdk";
 
 const HomePage = () => {
   const navigate = useNavigate();
@@ -46,7 +47,25 @@ const HomePage = () => {
           >
             <Spacebutton name="LET'S GO...." Function={PrintName} />
           </div>
-
+          <div
+            style={{
+              width: "100%",
+            }}
+          >
+            <Happy
+              price="100"
+              limit="100"
+              api="https://api-staging.superfluid.dev"
+              image="https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885__480.jpg"
+              name="PeerPay"
+              detail="PeerPay"
+              maxquantity="PeerPay"
+              minquantity="PeerPay"
+              labelname="PeerPay"
+              backgroundColor="#000000"
+              color="#000000"
+            />
+          </div>
           <div className="body1">
             <div className="a">PeerPay</div>
 
