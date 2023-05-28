@@ -214,3 +214,14 @@ box-shadow: black;
    .button:hover::before {
     width: 100%;
    }
+
+   .div1{
+    display: grid;
+    grid-template-columns: 30vh 100vh;
+
+    .a{
+        margin-left:50vh;
+        margin-top: 10vh;
+    }
+
+   }
