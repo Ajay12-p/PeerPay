@@ -21,12 +21,22 @@ const Wrapper =(props)=>{
     })
     }
 
+
+    //this is for sidebar 
+    const [HistoryFlag,setHistoryFlag] = useState(false);
+    const [ApiFlag, setApiFlag]  = useState(false);
+    const [DocsFlag,setDocsFlag]  = useState(false);
    const  sharedData ={
        data ,
-       addData
-        
+       addData,
+       HistoryFlag,
+       ApiFlag,
+       DocsFlag,
+       setHistoryFlag,
+       setApiFlag,
+       setDocsFlag
     }
-   
+
 
 return (
     <userContext.Provider value={{sharedData}}>
