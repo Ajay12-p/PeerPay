@@ -2,6 +2,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  
 
 }
 
@@ -17,7 +18,7 @@ background-color: rgb(190, 255, 177);
  border: 5px ;
  border-color: rgb(0, 0, 0);
 border-top-right-radius: 100px;
-  width:inherit;
+  width:35vh;
   padding-top: 35vh;
   outline-offset: 5px;
   outline-color: rgb(190, 255, 177) ;
