@@ -18,7 +18,7 @@ const Sidebar = () => {
   return (
     <div >
       
-      <div className={styles.border1}>
+   
       <div className={styles.sidebar}
       >
 
@@ -60,7 +60,7 @@ const Sidebar = () => {
 
     </div>
    </div>
-    </div>
+    
   );
 };
 
