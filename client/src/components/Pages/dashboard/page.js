@@ -6,7 +6,7 @@ import Sidebar from "../../Sidebar/Sidebar";
 import Docs from "../docs/page";
 import ApiPage from "../Api/page";
 import { userContext } from "../../context/accContext";
-
+import {dashRoute} from "../../dahsRoute/page"
 const Dashbord = () => {
 
  const ctx = useContext(userContext);
@@ -19,6 +19,8 @@ const Dashbord = () => {
       <div className={styles.div1}>
 
       <Sidebar /> 
+
+    
       <div className={styles.a}>
 {/* 
        { (historyFlag)&&
@@ -36,8 +38,11 @@ const Dashbord = () => {
         }
        
        { (DocsFlag)&&
+      <div>
 
-      <Docs/>
+        <Docs/>
+
+        </div>  
 
 
         }
