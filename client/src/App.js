@@ -7,6 +7,7 @@ import Dashbord from "./components/Pages/dashboard/page";
 import Join from "./components/Pages/join/page";
 import Payment from "./components/Pages/Payment/Payment";
 import History from "./components/Pages/History/history";
+import Docs from "./components/Pages/docs/page";
 
 
 
@@ -20,6 +21,7 @@ function App() {
       <Route exact path="/Payment" element={<Payment />} />
       <Route exact path="/Create-account/dashbord" element={<Dashbord />} />
       <Route exact path="/history" element={<History/>} />
+      <Route exact path ="/docs" element = {<Docs/>}/>
       
     </Routes>
   );
