@@ -8,7 +8,8 @@
 .Div2{
   display: flex;
 margin-top: 10vh;
-margin-left: 25vh;
+
+
  
 }
   .card1{
@@ -18,9 +19,8 @@ margin-left: 25vh;
  background-color:  rgb(190, 255, 177);
  height :15vh;
  display: flex;
- 
  place-items: center;
-
+margin-right: 30vh;
  margin-left: 3vh;
  margin-top:5vh;
  border: 5px black ;
@@ -31,7 +31,7 @@ margin-left: 25vh;
   .imagg{
     height: 100px;
     width: 100px;
-    margin-top: 3px;
+ 
     border-radius: 13px;
     margin-left: 2px;
   }
@@ -40,16 +40,20 @@ margin-left: 25vh;
 .items{
 
   display: grid;
-  grid-template-columns: auto auto auto auto auto ;
-  
+  grid-template-columns: auto auto auto auto auto;
+
+
+
 }
 
 .gridItems
 {
   padding: 20px;
   font-size: 20px;
-
+  align-items: center;
+  display: inline-block;
   text-align: center;
+  margin-top: 50px;
   margin-left: 50px;
 }
 
