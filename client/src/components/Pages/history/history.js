@@ -9,23 +9,16 @@ const History = () => {
 
                 <Sidebar />
 
-                {/* <div className="card">
-  <div className="bg" >
-  </div>
-  <div className="blob"> 
-</div>
-
-</div> */}
+         
                 <div className="Div2">
 
                     <div className="card1">
                         <div className="items">
                             <div className="  gridItems">
 
-                                <img src="./imagg.jpg" className="imagg" />
+                                <img src="./imagg.jpg" className="imagg"  />
                             </div>
 
-                        </div>
                         <div className="gridItems">
 
                             <div >
@@ -71,6 +64,8 @@ const History = () => {
 
                             </div>
                         </div>
+                    </div>
+                    
                     </div>
                 </div>
             </div>
