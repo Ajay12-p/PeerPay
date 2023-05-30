@@ -21,36 +21,8 @@ const Dashbord = () => {
       <Sidebar /> 
 
     
-      <div className={styles.a}>
-{/* 
-       { (historyFlag)&&
         
-      
-        
-      } */}
-       
-       { (ApiFlag)&&
-       <div style={{marginLeft:"500px"}}>
-
-       <ApiPage/>
-
-         </div>
-        }
-       
-       { (DocsFlag)&&
-      <div>
-
-        <Docs/>
-
-        </div>  
-
-
-        }
-       
-        
-      </div>
-      </div>
-
+    </div>
     </div>
   );
 };
