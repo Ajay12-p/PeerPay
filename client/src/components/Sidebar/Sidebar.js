@@ -27,37 +27,27 @@ const Sidebar = () => {
         
           <div className = {styles.button}>
 
-            <div> history</div>
+            <div> Api</div>
           </div>
-          
+          <Link to ="/history">  
         <div className = {styles.button}>
 
-<div    onClick={()=>{
-  if(ApiFlag){
-    setApiFlag(true);
-
-  }else{
-    setApiFlag(false);
-  }
-}}> Api
+<div   >
+history
 </div>
 </div>
+</Link> 
+<Link to= "/docs">
 <div className = {styles.button} >
 
-<div onClick={()=>{
-  if(DocsFlag){
-
-    setDocsFlag(true);
-  }else{
-    setDocsFlag(false)
-  }
-}}>  Docs </div>
+<div >  Docs </div>
 </div>
    
 
     
 
 
+</Link>
     </div>
    </div>
     
