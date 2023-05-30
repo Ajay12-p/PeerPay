@@ -1,0 +1,33 @@
+.mainDiv{
+    display: flex;
+    border: 3px black;
+    border-radius: 10px;
+    
+}
+
+.div2{
+    display:grid;
+    grid-template-columns: auto;
+
+    color:  rgb(190, 255, 177);
+  
+}
+
+.Heading{
+    color:  white;
+    margin-top: 20px;
+    font-size: 75px;
+    font-family: 'Times New Roman', Times, serif;
+    margin-left: 45vh;
+    background-color:  rgb(190, 255, 177);
+    margin-bottom: 20px;
+    text-align: center;
+
+}
+
+.items1{
+    margin-left: 50vh;
+}
+.sidebar1{
+    position: fixed;
+}
