@@ -1,12 +1,11 @@
-import logo from "./logo.svg";
 import "./App.css";
-import { BrowserRouter, Route, Routes } from "react-router-dom";
-import { ChakraProvider } from "@chakra-ui/react";
+import { Route, Routes } from "react-router-dom";
+
 import HomePage from "./components/Pages/HomePage/page";
 import Dashbord from "./components/Pages/dashboard/page";
 import Join from "./components/Pages/join/page";
 import Payment from "./components/Pages/Payment/Payment";
-import History from "./components/Pages/history/history";
+import History from "./components/Pages/History/History";
 import Docs from "./components/Pages/docs/page";
 import API from "./components/Pages/Api/page";
 

@@ -26,7 +26,7 @@ const Navbar = () => {
       <div className={styles.main}>
         <div>
           <div style={{ marginTop: "30px" }}>
-            <h1 className={styles.heading}>DRenting</h1>
+            <h1 className={styles.heading}>PEERPAY</h1>
 
             {/* <Spline scene="https://prod.spline.design/DjIcmxwy1aGaTtUO/scene.splinecode"/> */}
           </div>
