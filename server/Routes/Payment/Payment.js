@@ -7,14 +7,13 @@ router.post("/Pay", async (req, res) => {
     const { Buyer, seller, flowrate, start, end, Product, Amount, email } =
       req.body;
     console.log(AccountAdress, BussinessName);
-    const newPayment = await User.create({
+    const newPayment = await Payment.create({
       Buyer,
       seller,
       flowrate,
       start,
       end,
       Product,
-
       Amount,
     });
 

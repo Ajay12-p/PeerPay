@@ -45,27 +45,19 @@ const Navbar = () => {
             <h3
               className={styles.text}
               onClick={() => {
-                navigate("/History");
+                navigate("/UserHistory");
               }}
             >
-              Dashbord
+              Buyer History
             </h3>
 
             <h3
               className={styles.text}
               onClick={() => {
-                navigate("/dashbord");
+                navigate("/docs");
               }}
             >
               Docs
-            </h3>
-            <h3
-              className={styles.text}
-              onClick={() => {
-                navigate("/dashbord");
-              }}
-            >
-              Support
             </h3>
           </div>
         </div>

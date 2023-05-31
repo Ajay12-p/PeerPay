@@ -23,7 +23,7 @@ const History = () => {
         <Sidebar />
 
         <div className="Div2">
-          <div> History</div>
+          <div className="titleofHistory"> History</div>
           <div className="card1">
             <div className="  gridItems">
               <img src="./imagg.jpg" className="imagg" />

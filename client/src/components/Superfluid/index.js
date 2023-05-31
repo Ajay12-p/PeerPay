@@ -12,6 +12,7 @@ export async function createNewFlow(recipient, flowRate) {
     chainId: Number(chainId),
     provider: provider,
   });
+  console.log(flowRate);
 
   const superSigner = sf.createSigner({ signer: signer });
 

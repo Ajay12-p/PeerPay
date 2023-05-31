@@ -31,6 +31,7 @@ const Payment = () => {
   const [isconnected, setIsconnected] = useState(false);
   const [FlowRate, setFlowRate] = useState(0);
   const [timeRange, setTimeRange] = useState(30);
+  const [actualflowrate, setActualFlowRate] = useState(0);
   const [startDate, setSartDate] = useState(today);
   const [endDate, setEndDate] = useState(nextmin);
   const [Price, setPrice] = useState(100);
@@ -47,7 +48,9 @@ const Payment = () => {
   useEffect(() => {
     walletConnector();
     setFlowRate(getFlowRate(timeRange, total));
-  }, []);
+
+    setActualFlowRate(Math.floor(getFlowRate(timeRange, total) / 1000000000));
+  }, [total]);
 
   const handleDate = (e) => {
     const startDate = new Date(e.target.value);
@@ -295,11 +298,20 @@ const Payment = () => {
               </div>
               <div className="inputPay">
                 {" "}
-                Flow Rate = {Math.floor(FlowRate / 1000000000)} Gwei/s 💸
+                Flow Rate = {actualflowrate} Gwei/s 💸
               </div>
               <div className="inputPay">
                 Rent Duration = {timeRange} Days
                 {/* {(startDate.getTime() - endDate.getTime) / (1000 * 3600 * 24)} */}
+              </div>
+              <div
+                style={{
+                  fontSize: "20px",
+                  color: "red",
+                  marginTop: "10px",
+                }}
+              >
+                ⚠️Use Polygon Mumbai to performe transaction
               </div>
               <div
                 style={{
@@ -324,8 +336,8 @@ const Payment = () => {
                       if (data) {
                         sendMail();
                         alert("Payment Done");
+                        navigator(-1);
                       }
-                      window.open(jsonData.next);
                     }}
                   />
                 ) : (
