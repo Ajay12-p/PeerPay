@@ -25,13 +25,12 @@ router.post("/Pay", async (req, res) => {
   }
 });
 
-router.get("/userinfo", async (req, res) => {
-  console.log(req.body);
+router.get("/userinfo/:user", async (req, res) => {
   try {
-    const { Buyer } = req.body;
+    const { user } = req.prams;
 
     const PaymentDetail = await Payment.findOne({
-      Buyer: Buyer,
+      Buyer: user,
     });
 
     console.log(PaymentDetail);
