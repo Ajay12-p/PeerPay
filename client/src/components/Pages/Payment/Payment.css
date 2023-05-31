@@ -5,9 +5,11 @@
   border-radius: 20px;
   justify-content: center;
   align-items: center;
+
   background-color: black;
   border: 1px solid white;
 }
+
 .mainPayment {
   display: flex;
   height: 100vh;
@@ -233,6 +235,14 @@
   gap: 20px;
 }
 
+.youraddress {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  gap: 20px;
+  font-size: 15px;
+  font-weight: 600;
+}
 .selectofinput {
   display: flex;
   justify-content: start;

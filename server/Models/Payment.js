@@ -30,10 +30,6 @@ const PaymentDataSchema = mongoose.Schema(
       type: mongoose.Schema.Types.Mixed,
       required: true,
     },
-    TxID: {
-      type: String,
-      required: true,
-    },
   },
   { timestamps: true }
 );

@@ -1,15 +1,14 @@
-import { Route,Routes } from "react-router-dom"
-import History from "../Pages/History/history"
+import { Route, Routes } from "react-router-dom";
+import History from "../Pages/history/history";
 
-const dashRoute =()=>{
-    return (
-        <>
-        <Routes>
-            <Route exact path ="/dashbord/history" element ={<History/>}/>
-        </Routes>
-        
-        </>
-    )
-}
+const dashRoute = () => {
+  return (
+    <>
+      <Routes>
+        <Route exact path="/dashbord/history" element={<History />} />
+      </Routes>
+    </>
+  );
+};
 
 export default dashRoute;

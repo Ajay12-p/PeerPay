@@ -4,7 +4,8 @@ const Payment = require("../../Models/Payment");
 router.post("/Pay", async (req, res) => {
   console.log(req.body);
   try {
-    const { Buyer, seller, flowrate, start, end, Product, Amount } = req.body;
+    const { Buyer, seller, flowrate, start, end, Product, Amount, email } =
+      req.body;
     console.log(AccountAdress, BussinessName);
     const newPayment = await User.create({
       Buyer,
@@ -13,7 +14,7 @@ router.post("/Pay", async (req, res) => {
       start,
       end,
       Product,
-      TxID,
+
       Amount,
     });
 
