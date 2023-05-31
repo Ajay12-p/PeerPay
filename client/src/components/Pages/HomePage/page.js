@@ -1,15 +1,39 @@
 import Navbar from "../Navbar/page";
 import "./Home.css";
-import { Box, Card } from "@chakra-ui/react";
+import { Box, Card, useEditable } from "@chakra-ui/react";
 import { useNavigate } from "react-router-dom";
 import Nav from "../Nav/page";
 import Spacebutton from "../../../UI/Buttons/spacebutton/Spacebutton";
-
+import { userContext } from "../../context/accContext";
+import { useContext, useEffect, useState } from "react";
 const HomePage = () => {
   const navigate = useNavigate();
+  const ctx = useContext(userContext);
+  const accAddress = ctx.sharedData.data.accAddress;
+  const [flagofbussiness, setFlagofbussiness] = useState(false);
+  async function checkerBussiness() {
+    const response = await fetch(
+      `http://localhost:5000/api/bussiness/getOwner/${accAddress}`
+    );
+    const data = await response.json();
+    console.log(data);
+    if (data.lenght != 0) {
+      setFlagofbussiness(true);
+    }
+  }
 
+  useEffect(() => {
+    if (accAddress) {
+      checkerBussiness();
+    }
+  }, [accAddress]);
   const PrintName = () => {
-    navigate("/Create-account");
+    if (flagofbussiness) {
+      navigate("/api");
+      return;
+    } else {
+      navigate("/Create-account");
+    }
   };
   return (
     <>

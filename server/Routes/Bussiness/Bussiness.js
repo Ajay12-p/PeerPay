@@ -18,19 +18,19 @@ router.post("/register", async (req, res) => {
   }
 });
 
-router.get("/getOwner", async (req, res) => {
-  console.log(req.body);
+router.get("/getOwner/:id", async (req, res) => {
+  console.log(req.params);
+  function makeAllLettersBig(string) {
+    return string.toUpperCase();
+  }
   try {
-    const { AccountAdress } = req.body;
+    const { id } = req.params;
+    console.log(makeAllLettersBig(id));
 
-    const BussinessDetail = await Bussiness.findOne({
-      AccountAdress: AccountAdress,
+    const BussinessDetail = await Bussiness.find({
+      AccountAdress: id,
     });
-    // console.log(AccountAdress, BussinessName);
-    // const newBussiness = await Bussiness.create({
-    //   AccountAdress,
-    //   BussinessName,
-    // });
+
     console.log(BussinessDetail);
     res.status(200).json(BussinessDetail);
 

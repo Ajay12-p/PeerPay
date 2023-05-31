@@ -1,6 +1,7 @@
 "use client";
 import styles from "./page.module.scss";
 import Spline from "@splinetool/react-spline";
+import Spacebutton from "../../../UI/Buttons/spacebutton/Spacebutton";
 import { useNavigate } from "react-router-dom";
 import { userContext } from "../../context/accContext";
 import { useContext } from "react";
@@ -44,7 +45,7 @@ const Navbar = () => {
             <h3
               className={styles.text}
               onClick={() => {
-                navigate("/api");
+                navigate("/History");
               }}
             >
               Dashbord
@@ -68,11 +69,20 @@ const Navbar = () => {
             </h3>
           </div>
         </div>
-
-        <div className={styles.button} onClick={walletConnector}>
-          {accAddress
-            ? `${accAddress.substr(0, 5)}...${accAddress.substr(37, 42)}`
-            : "connect"}
+        <div
+          style={{
+            marginTop: "20px",
+            marginRight: "20px",
+          }}
+        >
+          <Spacebutton
+            name={
+              accAddress
+                ? `${accAddress.substr(0, 5)}...${accAddress.substr(37, 42)}`
+                : "connect"
+            }
+            Function={walletConnector}
+          />
         </div>
       </div>
     </>

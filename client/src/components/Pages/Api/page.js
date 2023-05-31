@@ -1,57 +1,85 @@
 import Sidebar from "../../Sidebar/Sidebar";
-import React, { useRef } from "react";
-import Spacebutton from "../../../UI/Buttons/spacebutton/Spacebutton";
 import "./Api.css";
-const Api = () => {
-  const codeInputRef = useRef(null);
+import { useContext, useEffect, useState } from "react";
+import { userContext } from "../../context/accContext";
 
+const History = () => {
+  const ctx = useContext(userContext);
+  const accAddress = ctx.sharedData.data.accAddress;
+  const [bussinessData, setBussinessData] = useState([
+    {
+      BussinessName: "⚠️Connect Wallet",
+      AccountAdress: "⚠️Connect Wallet",
+      _id: "⚠️Connect Wallet",
+    },
+  ]);
+  const [flagofbussiness, setFlagofbussiness] = useState(false);
+  async function checkerBussiness() {
+    const response = await fetch(
+      `http://localhost:5000/api/bussiness/getOwner/${accAddress}`
+    );
+    const data = await response.json();
+    console.log(data);
+    if (data.lenght != 0) {
+      setBussinessData(data);
+      setFlagofbussiness(true);
+    }
+  }
   const copyCode = () => {
-    codeInputRef.current.select();
-    document.execCommand("copy");
+    navigator.clipboard.writeText(bussinessData[0]._id);
     alert("Code copied to clipboard!");
   };
+  useEffect(() => {
+    if (accAddress) {
+      checkerBussiness();
+    }
+  }, [accAddress]);
   return (
     <>
       <div className="mainDiv">
-        <div className="sidebar1">
-          <Sidebar />
-        </div>
-        <div className="div2">
-          <div className="Heading">Your API</div>
+        <Sidebar />
 
-          <div className="items2">
-            <div>
-              <textarea
-                ref={codeInputRef}
-                rows="20"
-                style={{
-                  fontSize: "20px",
-                  backgroundColor: "black",
-                  color: "white",
-                  fontFamily: "monospace",
-                }}
-                cols="85"
-              >
-                {`import PeerPay from "peerpaysdk";
-
-function App() {
-
-return <PeerPay 
-        price= " price of product " ,
-        limit = "limit of product for rent",
-        api = " you api ",
-        image  = "URL of image  ",
-        name  = "Product name ",
-        detail  = "Detail of product",
-        maxtime  = "max days for giving product",
-        backgroundColor = " you can change background color of button",
-        color =" you can change the color of text" ,
-       />;
-       } `}
-              </textarea>
+        <div className="Div2">
+          <div
+            style={{
+              fontSize: "40px",
+              fontWeight: "bold",
+              color: "white",
+              fontFamily: "cursive",
+            }}
+          >
+            your Api
+          </div>
+          <div className="card1">
+            <div className="gridItems">
+              <div>
+                Bussiness Name
+                <br />
+                <span style={{ color: "white" }}>
+                  {bussinessData[0].BussinessName}
+                </span>
+              </div>
             </div>
-            <div>
-              <Spacebutton name="Copy Code" Function={copyCode} />
+            <div className="gridItems">
+              <div>
+                Owner Adress
+                <br />
+                <span style={{ color: "white" }}>
+                  {bussinessData[0].AccountAdress}
+                </span>
+              </div>
+            </div>
+            <div className="gridItems">
+              <div>
+                API
+                <br />
+                <span style={{ color: "white" }}>{bussinessData[0]._id}</span>
+              </div>
+            </div>
+            <div className="gridItems">
+              <div className="button2" onClick={copyCode}>
+                Copy API
+              </div>
             </div>
           </div>
         </div>
@@ -59,4 +87,4 @@ return <PeerPay
     </>
   );
 };
-export default Api;
+export default History;

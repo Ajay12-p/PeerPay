@@ -4,25 +4,36 @@ import "./Forms.css";
 import LoginImg from "../../Media/bussigness.png";
 import Submit from "../../../UI/Buttons/Submit/Submit";
 import Congrats from "../../../UI/Card/CongratulationCard/Congrats";
-import { useState } from "react";
+import { useState, useContext, useEffect } from "react";
 import ConfettiExplosion from "react-confetti-explosion";
+import { userContext } from "../../context/accContext";
 import axios from "axios";
 import Form from "../../../UI/Card/forms/Form";
+
 const Join = () => {
+  const ctx = useContext(userContext);
+  const [flags, setFlags] = useState(false);
+
   const [flagofcong, setFlagofcong] = useState(true);
   const [data, setData] = useState({
     AccountAdress: "",
     BussinessName: "",
   });
 
-  const [flags, setFlags] = useState(false);
+  useEffect(() => {
+    if (ctx.sharedData.data.accAddress) {
+      setData({ ...data, AccountAdress: ctx.sharedData.data.accAddress });
+      setFlags(true);
+    }
+  }, [ctx.sharedData.data.accAddress]);
+
   const navigate = useNavigate();
 
   const HandelCong = () => {
-    navigate("/dashbord");
+    navigate("/api");
   };
   const HandelSubmit = async () => {
-    console.log(data.AccountAdress.length);
+    console.log(data.AccountAdress);
     if (data.AccountAdress.length != 42) {
       alert("Please Enter a valid Account Address");
       return;
@@ -74,6 +85,8 @@ const Join = () => {
               <form className="form">
                 <div className="form_front">
                   <div className="form_details">Create API</div>
+                  {!flags &&
+                    " ⚠️Connect Your wallet so we can take account address"}
                   <input
                     type="text"
                     onChange={(e) => {
@@ -81,6 +94,7 @@ const Join = () => {
                     }}
                     className="input"
                     placeholder="Account Address"
+                    value={data.AccountAdress}
                   />
                   <input
                     type="text"

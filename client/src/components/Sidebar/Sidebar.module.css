@@ -8,7 +8,7 @@
   margin-left: 5px;
   display: flex;
   flex-direction: column;
-  justify-content: start;
+  justify-content: space-between;
   align-items: center;
   height: 100vh;
   color: white;
@@ -23,7 +23,7 @@
   border-color: rgb(0, 0, 0);
   border-top-right-radius: 100px;
   width: 35vh;
-  padding-top: 25vh;
+  padding-top: 100px;
   outline-offset: 5px;
   outline-color: rgb(190, 255, 177);
   outline-style: solid;
