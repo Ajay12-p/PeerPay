@@ -8,6 +8,7 @@ import Join from "./components/Pages/join/page";
 import Payment from "./components/Pages/Payment/Payment";
 import History from "./components/Pages/history/history";
 import Docs from "./components/Pages/docs/page";
+import API from "./components/Pages/Api/page";
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
       <Route exact path="/Create-account/dashbord" element={<Dashbord />} />
       <Route exact path="/history" element={<History />} />
       <Route exact path="/docs" element={<Docs />} />
+      <Route exact path="/api" element={<API />} />
     </Routes>
   );
 }

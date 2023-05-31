@@ -1,0 +1,47 @@
+.mainDiv {
+  display: flex;
+  border: 3px black;
+  border-radius: 10px;
+  background-image: linear-gradient(
+    to right,
+    rgb(199, 210, 254),
+    rgb(254, 202, 202),
+    rgb(254, 249, 195)
+  );
+}
+
+.div2 {
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: center;
+
+  color: rgb(190, 255, 177);
+}
+
+.Heading {
+  color: white;
+  margin-top: 20px;
+  font-size: 75px;
+  font-family: "Times New Roman", Times, serif;
+  margin-left: 45vh;
+
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.items1 {
+  margin-left: 50vh;
+}
+.items2 {
+  margin-top: 100px;
+  margin-left: 50vh;
+  margin-bottom: 100px;
+}
+.sidebar1 {
+  position: fixed;
+}
+
+.textarea {
+  font-size: 20px;
+}

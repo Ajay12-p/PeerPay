@@ -1,5 +1,6 @@
 .mainDiv {
   display: flex;
+  height: 100vh;
 }
 
 .Div2 {

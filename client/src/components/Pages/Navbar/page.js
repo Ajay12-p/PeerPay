@@ -44,7 +44,7 @@ const Navbar = () => {
             <h3
               className={styles.text}
               onClick={() => {
-                navigate("/dashbord");
+                navigate("/api");
               }}
             >
               Dashbord
