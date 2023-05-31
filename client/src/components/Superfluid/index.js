@@ -1,7 +1,7 @@
 import { Framework } from "@superfluid-finance/sdk-core";
 import { ethers } from "ethers";
 
-export async function createNewFlow(recipient, flowRate) {
+export async function createNewFlow(recipient, flowRate, Coin) {
   const provider = new ethers.providers.Web3Provider(window.ethereum);
   await provider.send("eth_requestAccounts", []);
 
@@ -18,7 +18,8 @@ export async function createNewFlow(recipient, flowRate) {
 
   console.log(signer);
   console.log(await superSigner.getAddress());
-  const daix = await sf.loadSuperToken("fDAIx");
+  console.log(Coin);
+  const daix = await sf.loadSuperToken(Coin);
 
   console.log(daix);
 
@@ -56,4 +57,36 @@ export function getFlowRate(days, amount) {
   console.log(value);
   return Math.floor(value);
   // return parseInt(value);
+}
+
+export async function DeleteFlow(recipient, coin) {
+  const provider = new ethers.providers.Web3Provider(window.ethereum);
+  await provider.send("eth_requestAccounts", []);
+
+  const signer = provider.getSigner();
+
+  const chainId = await window.ethereum.request({ method: "eth_chainId" });
+  const sf = await Framework.create({
+    chainId: Number(chainId),
+    provider: provider,
+  });
+
+  const superSigner = sf.createSigner({ signer: signer });
+
+  try {
+    const deleteFlowOperation = sf.cfaV1.deleteFlow({
+      sender: await signer.getAddress(),
+      receiver: recipient,
+      superToken: coin,
+      // userData?: string
+    });
+
+    const result = await deleteFlowOperation.exec(signer);
+    return;
+  } catch (error) {
+    console.log(
+      "Hmmm, your transaction threw an error. Make sure that this stream does not already exist, and that you've entered a valid Ethereum address!"
+    );
+    console.error(error);
+  }
 }

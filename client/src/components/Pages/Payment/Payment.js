@@ -13,6 +13,7 @@ const Payment = () => {
   const [userEmail, setUserEmail] = useState("");
   const [Usdcvalue, setUsdcvalue] = useState("");
   const [Daivalue, setDaivalue] = useState("");
+
   //////// this helps us to set minumum date to today and maximum date to next month////////
   const today = new Date().toISOString().split("T")[0];
   const nextmonth = new Date();
@@ -43,7 +44,6 @@ const Payment = () => {
   const queryParams = new URLSearchParams(location.search);
   const queryString = queryParams.get("data");
   const jsonData = JSON.parse(decodeURIComponent(queryString));
-  console.log(jsonData);
 
   useEffect(() => {
     walletConnector();
@@ -69,9 +69,9 @@ const Payment = () => {
     nextmonth.getDate()
   );
   ///////////////////////////// for sending mail to user //////////////////////
-  const sendMail = () => {
+  const sendMail = (coinis) => {
     const data = {
-      email: jsonData.email,
+      image: jsonData.image,
       subject: "Payment Done",
       text: `Your Payment of ${total} ${Coin} has been done`,
       Buyer: userDetail.adddress,
@@ -79,6 +79,7 @@ const Payment = () => {
       flowrate: FlowRate,
       start: startDate,
       end: endDate,
+      coin: coinis,
       Product: jsonData.name,
       Amount: total,
       email: userEmail,
@@ -296,6 +297,11 @@ const Payment = () => {
                   </select>
                 </div>
               </div>
+              <div>
+                {" "}
+                ⚠️ Select the coin which have minimum balancy of price of
+                product
+              </div>
               <div className="inputPay">
                 {" "}
                 Flow Rate = {actualflowrate} Gwei/s 💸
@@ -329,15 +335,21 @@ const Payment = () => {
                       FlowRate / 1000000000
                     )}Gwei/s`}
                     Function={async () => {
-                      const data = await createNewFlow(
-                        jsonData.owner,
-                        FlowRate
-                      );
-                      if (data) {
-                        sendMail();
-                        alert("Payment Done");
-                        navigator(-1);
+                      let coinis = "";
+                      if (Coin === "fUSDCx") {
+                        coinis = usdcxadd;
+                      } else {
+                        coinis = daixadd;
                       }
+                      // const data = await createNewFlow(
+                      //   jsonData.owner,
+                      //   FlowRate,
+                      //   Coin
+                      // );
+                      // if (data) {
+                      sendMail(coinis);
+                      // alert("Payment Done");
+                      // }
                     }}
                   />
                 ) : (

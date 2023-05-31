@@ -4,10 +4,7 @@ const Payment = require("../../Models/Payment");
 router.post("/Pay", async (req, res) => {
   console.log(req.body);
   try {
-    const { Buyer, seller, flowrate, start, end, Product, Amount, email } =
-      req.body;
-    console.log(AccountAdress, BussinessName);
-    const newPayment = await Payment.create({
+    const {
       Buyer,
       seller,
       flowrate,
@@ -15,20 +12,35 @@ router.post("/Pay", async (req, res) => {
       end,
       Product,
       Amount,
-    });
+      image,
+      coin,
+    } = req.body;
 
+    const newPayment = await Payment.create({
+      Buyer,
+      seller,
+      flowrate,
+      start,
+      end,
+      image,
+      Product,
+      coin,
+      Amount,
+      Active: true,
+    });
+    console.log(newPayment);
     res.status(200).json(newPayment);
-    // res.json("Bussiness has been registered", newBussiness);
   } catch (err) {
     console.log(err);
   }
 });
 
-router.get("/userinfo/:user", async (req, res) => {
+router.post("/userinfo", async (req, res) => {
   try {
-    const { user } = req.prams;
+    const { user } = req.body;
+    console.log(user);
 
-    const PaymentDetail = await Payment.findOne({
+    const PaymentDetail = await Payment.find({
       Buyer: user,
     });
 
@@ -85,6 +97,19 @@ router.get("/byid", async (req, res) => {
     res.status(200).json(product);
 
     // res.json("Bussiness has been registered", newBussiness);
+  } catch (err) {
+    console.log(err);
+  }
+});
+
+router.put("/inactive", async (req, res) => {
+  const { id } = req.body;
+  try {
+    const product = await Payment.findByIdAndUpdate(
+      id,
+      { Active: false },
+      { new: true }
+    );
   } catch (err) {
     console.log(err);
   }

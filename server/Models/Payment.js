@@ -18,12 +18,24 @@ const PaymentDataSchema = mongoose.Schema(
       type: String,
       required: true,
     },
+    image: {
+      type: String,
+      required: true,
+    },
     seller: {
+      type: String,
+      required: true,
+    },
+    coin: {
       type: String,
       required: true,
     },
     Product: {
       type: mongoose.Schema.Types.Mixed,
+      required: true,
+    },
+    Active: {
+      type: Boolean,
       required: true,
     },
     Amount: {
