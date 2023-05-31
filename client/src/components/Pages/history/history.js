@@ -8,11 +8,10 @@ const History = () => {
         <Sidebar />
 
         <div className="Div2">
+          <div> History</div>
           <div className="card1">
-            <div className="items">
-              <div className="  gridItems">
-                <img src="./imagg.jpg" className="imagg" />
-              </div>
+            <div className="  gridItems">
+              <img src="./imagg.jpg" className="imagg" />
             </div>
             <div className="gridItems">
               <div>
