@@ -44,7 +44,24 @@ const Payment = () => {
   const queryParams = new URLSearchParams(location.search);
   const queryString = queryParams.get("data");
   const jsonData = JSON.parse(decodeURIComponent(queryString));
+  const [ApiData, setApiData] = useState();
 
+  async function CheckBussinessData() {
+    await fetch("http://localhost:5000/api/bussiness/get", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        api: jsonData.api,
+      }),
+      // body: JSON.stringify(data),
+    })
+      .then((res) => res.json())
+      .then((res) => {
+        console.log(res);
+      });
+  }
   useEffect(() => {
     walletConnector();
     setFlowRate(getFlowRate(timeRange, total));
@@ -52,6 +69,9 @@ const Payment = () => {
     setActualFlowRate(Math.floor(getFlowRate(timeRange, total) / 1000000000));
   }, [total]);
 
+  useEffect(() => {
+    CheckBussinessData();
+  });
   const handleDate = (e) => {
     const startDate = new Date(e.target.value);
     const endDate = new Date(e.target.value);

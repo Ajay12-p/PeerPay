@@ -39,4 +39,21 @@ router.get("/getOwner/:id", async (req, res) => {
     console.log(err);
   }
 });
+
+router.post("/get", async (req, res) => {
+  try {
+    const { api } = req.body;
+    console.log(api);
+    const BussinessDetail = await Bussiness.find({
+      _id: api,
+    });
+
+    console.log(BussinessDetail);
+    res.status(200).json(BussinessDetail);
+
+    // res.json("Bussiness has been registered", newBussiness);
+  } catch (err) {
+    console.log(err);
+  }
+});
 module.exports = router;
