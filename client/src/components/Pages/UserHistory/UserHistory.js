@@ -68,7 +68,7 @@ const History = () => {
                     <div>
                       flow Rate per second
                       <br />
-                      <span style={{ color: "white" }}>{flow}</span>
+                      <span style={{ color: "white" }}>{flow}$</span>
                     </div>
                   </div>
                   <div className="gridItems">

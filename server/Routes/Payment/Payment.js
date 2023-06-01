@@ -53,12 +53,12 @@ router.post("/userinfo", async (req, res) => {
   }
 });
 
-router.get("/bussinesspayment", async (req, res) => {
+router.post("/bussinesspayment", async (req, res) => {
   console.log(req.body);
   try {
     const { Seller } = req.body;
 
-    const PaymentDetail = await Payment.findOne({
+    const PaymentDetail = await Payment.find({
       seller: Seller,
     });
 
