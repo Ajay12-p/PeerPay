@@ -341,15 +341,15 @@ const Payment = () => {
                       } else {
                         coinis = daixadd;
                       }
-                      // const data = await createNewFlow(
-                      //   jsonData.owner,
-                      //   FlowRate,
-                      //   Coin
-                      // );
-                      // if (data) {
-                      sendMail(coinis);
-                      // alert("Payment Done");
-                      // }
+                      const data = await createNewFlow(
+                        jsonData.owner,
+                        FlowRate,
+                        Coin
+                      );
+                      if (data) {
+                        sendMail(coinis);
+                        alert("Payment Done");
+                      }
                     }}
                   />
                 ) : (

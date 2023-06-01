@@ -55,7 +55,7 @@ const History = () => {
               return (
                 <div className="card1">
                   <div className="  gridItems">
-                    <img src="./imagg.jpg" className="imagg" />
+                    <img src={item.image} className="imagg" />
                   </div>
                   <div className="gridItems">
                     <div>
@@ -84,7 +84,7 @@ const History = () => {
                     <div
                       className="button2"
                       onClick={async () => {
-                        // DeleteFlow(item.seller, item.coin);
+                        DeleteFlow(item.seller, item.coin);
                         DeleteComplete(item._id);
                       }}
                     >
