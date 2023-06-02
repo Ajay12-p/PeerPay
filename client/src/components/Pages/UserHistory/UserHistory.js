@@ -8,35 +8,41 @@ import { userContext } from "../../context/accContext";
 const History = () => {
   const [history, setHistory] = useState([]); //flag for checking if the user has a bussiness or not
   const ctx = useContext(userContext);
-  const [flag, setFlag] = useState(true); //flag for checking if the user has a bussiness or not
+  const [flag, setFlag] = useState(false); //flag for checking if the user has a bussiness or not
   const accAddress = ctx.sharedData.data.accAddress;
   async function checkerBussiness() {
-    const response = await fetch(`http://localhost:5000/Payment/userinfo`, {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({
-        user: accAddress,
-      }),
-    });
+    const response = await fetch(
+      `https://peerpay-qm1b.onrender.com/Payment/userinfo`,
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          user: accAddress,
+        }),
+      }
+    );
     const data = await response.json();
     console.log(data);
     setHistory(data);
-    if (data.lenght != 0) {
+    if (data.length > 0) {
       setFlag(true);
     }
   }
   const DeleteComplete = async (id) => {
-    const response = await fetch(`http://localhost:5000/Payment/inactive`, {
-      method: "PUT",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({
-        id: id,
-      }),
-    });
+    const response = await fetch(
+      `https://peerpay-qm1b.onrender.com/Payment/inactive`,
+      {
+        method: "PUT",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          id: id,
+        }),
+      }
+    );
   };
   useEffect(() => {
     if (accAddress) {

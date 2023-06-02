@@ -11,7 +11,7 @@ const History = () => {
   const [flagofbussiness, setFlagofbussiness] = useState(false);
   async function checkerBussiness() {
     const response = await fetch(
-      `http://localhost:5000/api/bussiness/getOwner/${accAddress}`
+      `https://peerpay-qm1b.onrender.com/api/bussiness/getOwner/${accAddress}`
     );
     const data = await response.json();
     console.log(data);

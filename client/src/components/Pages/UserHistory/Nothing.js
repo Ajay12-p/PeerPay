@@ -8,8 +8,9 @@ const Nothing = () => {
         justifyContent: "center",
         alignItems: "center",
         width: "80vw",
-        height: "50vh",
+        height: "70vh",
         fontSize: "2rem",
+        color: "black",
       }}
     >
       Nothing has purchased by you yet🫡

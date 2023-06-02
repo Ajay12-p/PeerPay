@@ -1,3 +1,4 @@
+"use strict";
 import React, { useState, useEffect } from "react";
 import "./Payment.css";
 import Connect from "../../../UI/Buttons/Submit/Submit";
@@ -36,6 +37,7 @@ const Payment = () => {
   const [startDate, setSartDate] = useState(today);
   const [endDate, setEndDate] = useState(nextmin);
   const [Price, setPrice] = useState(100);
+  const [bussiness_flag, setBussiness_flag] = useState(false);
   const [userDetail, setUserDetail] = useState({
     provider: null,
     adddress: "",
@@ -47,7 +49,8 @@ const Payment = () => {
   const [ApiData, setApiData] = useState();
 
   async function CheckBussinessData() {
-    await fetch("http://localhost:5000/api/bussiness/get", {
+    if (isconnected == false) return;
+    await fetch(" http://localhost:5000/api/Bussiness/get", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -60,18 +63,20 @@ const Payment = () => {
       .then((res) => res.json())
       .then((res) => {
         console.log(res);
+
+        setApiData(res);
+        setBussiness_flag(true);
       });
   }
+
   useEffect(() => {
     walletConnector();
+
     setFlowRate(getFlowRate(timeRange, total));
 
     setActualFlowRate(Math.floor(getFlowRate(timeRange, total) / 1000000000));
   }, [total]);
 
-  useEffect(() => {
-    CheckBussinessData();
-  });
   const handleDate = (e) => {
     const startDate = new Date(e.target.value);
     const endDate = new Date(e.target.value);
@@ -82,6 +87,9 @@ const Payment = () => {
     setFlowRate(getFlowRate(timeRange, total));
   };
 
+  if (bussiness_flag == false) {
+    CheckBussinessData();
+  }
   /// this help us to set max date as per the limit we get from the json file//////
   const maxDate = new Date(
     nextmonth.getFullYear(),
@@ -104,7 +112,7 @@ const Payment = () => {
       Amount: total,
       email: userEmail,
     };
-    fetch("http://localhost:5000/Payment/Pay", {
+    fetch("https://peerpay-qm1b.onrender.com/Payment/Pay", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -250,9 +258,16 @@ const Payment = () => {
           <div className="item2 flexItem">
             <h2>Payment Section</h2>
             <div className="PaymentPart">
+              <div>
+                {bussiness_flag ? (
+                  <div>Bussiness name :- {ApiData[0].BussinessName}</div>
+                ) : (
+                  "Not Registerd as a bussiness"
+                )}
+              </div>
               <div className="inputPay">
                 Your Address ={" "}
-                {userDetail.adddress ? (
+                {isconnected ? (
                   `${userDetail.adddress.substring(
                     0,
                     7
@@ -274,11 +289,11 @@ const Payment = () => {
               </div>
               <div className="inputPay">
                 Owner Address ={" "}
-                {jsonData.owner ? (
-                  `${jsonData.owner.substring(
+                {bussiness_flag ? (
+                  `${ApiData[0].AccountAdress.substring(
                     0,
                     7
-                  )}.........................${jsonData.owner.substring(
+                  )}.........................${ApiData[0].AccountAdress.substring(
                     38,
                     42
                   )}`

@@ -17,7 +17,7 @@ const History = () => {
 
   async function checkerBussiness() {
     const response = await fetch(
-      `http://localhost:5000/Payment/bussinesspayment`,
+      `https://peerpay-qm1b.onrender.com/Payment/bussinesspayment`,
       {
         method: "POST",
         headers: {

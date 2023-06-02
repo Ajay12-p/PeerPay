@@ -44,7 +44,7 @@ const Join = () => {
     }
 
     const response = await axios.post(
-      "http://localhost:5000/api/Bussiness/register",
+      "https://peerpay-qm1b.onrender.com/api/Bussiness/register",
       data
     );
 
